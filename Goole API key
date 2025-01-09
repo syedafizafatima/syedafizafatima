@@ -1,0 +1,62 @@
+How to create and utilize Google API key.
+
+
+
+1. Generate API key  
+
+* Go to Google Cloud Console
+
+* Create a new project 
+
+* Enable Required API services 
+
+* Go to Credentials → Create Credentials → API Key
+
+* Your API key is generated now can Copy it 
+
+
+
+IMPORTANT NOTE: Only after finishing the billing process in the Google Cloud Console you can utse the API key.
+
+
+
+2. Security Notes.
+
+* Never share your API key publically.
+
+* Set up usage quotas to avoid unexpected charges
+
+* Keep track of your API usage in the Google Cloud Console
+
+
+
+Google Cloud Platform Console offers new customers $300 in free credits to use within 90 days
+
+
+
+3. Modules Required
+
+* googlemaps
+
+* geopy
+
+
+
+below shows a basic implementation of Python utilizing an API key and module. 
+VS Code (Python3) 
+
+import googlemaps
+
+# Initialize with your API key
+gmaps = googlemaps.Client(key='YOUR_API_KEY')
+
+# Example: Get address details
+address = "Any Address"
+result = gmaps.geocode(address)
+
+# Get coordinates
+lat = result[0]['geometry']['location']['lat']
+lng = result[0]['geometry']['location']['lng']
+
+print(f"Latitude: {lat}")
+print(f"Longitude: {lng}") 
